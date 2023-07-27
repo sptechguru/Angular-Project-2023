@@ -1,0 +1,28 @@
+<section class="container-fluid py-3">
+
+
+  <marquee direction="left" scrollamount="20" class="py-3"><i class="fa-solid fa-star text-warning"></i>
+    &nbsp;&nbsp;Welcome to Indian news . .&nbsp;&nbsp;<i class="fa-solid fa-star text-warning"></i></marquee>
+  <div class="row">
+
+    <div class="col-md-4 col-lg-4 col-12" *ngFor="let item of newslist; let i= index;">
+      <div class="bgimg card shadow-lg p-3 mb-5 bg-body rounded">
+        <a href="{{item?.url}}" target="blank" style="cursor: pointer;">
+          <img class="card-img-top img-fluid img-reponsive rounded mx-auto  w-100 d-block" src="{{item?.urlToImage}}"
+            alt="Card image cap">
+        </a>
+        <div class="card-body">
+          <h4 class="card-title text-priamry">{{item?.title | slice:0:50}}</h4>
+          <h3 class="card-text"><small class="text-muted"><span class="badge rounded-pill bg-danger">{{item?.publishedAt
+                |date:"short"}}</span></small></h3>
+          <i class="fa fa-user fa-2x  text-warning" aria-hidden="true">&nbsp; &nbsp;</i>{{item?.author | slice:0:20}}
+          <p class="card-text py-3"> {{item?.description | slice:0:50}}</p>
+          <a href="{{item?.url}}" target="blank" class="btn btn-link">Read More..</a>
+        </div>
+
+      </div>
+      <br />
+      <br />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color:slateblue;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 50%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.card23{
+  margin:auto;
+  width: 50% !important;
+  height: 300px !important;
+  border: 5px solid blue !important;
+  align-items: center;
+
+}

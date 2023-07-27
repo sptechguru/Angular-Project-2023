@@ -1,0 +1,38 @@
+.pageinfo{
+  width: 100%;
+  height: 800px;
+  // background-color:sandybrown;
+}
+h1{
+  font-size: 2em;
+}
+
+.one{
+  background-color: red;
+  color: #ffff;
+  // height: 100px;
+}
+
+.two{
+  background-color:blue;
+  color: #ffff;
+}
+
+.three{
+  background-color: pink;
+  color: #ffff;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+img{
+  width: 100%;
+  height: 400px;
+}

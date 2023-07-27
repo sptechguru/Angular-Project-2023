@@ -1,0 +1,63 @@
+
+<div class="pageinfo container">
+
+  <div class="row"  >
+
+    <div  class="p-2 col-md-4"*ngFor="let item of dataimg;" >
+      <mat-card class="example-card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>{{item.title}}</mat-card-title>
+          <mat-card-subtitle>{{item.subtittle}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{item.url}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            {{item.contnent}}
+          </p>s
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">LIKE</button>
+          <button mat-raised-button color="accent">SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+<hr/>
+</div>
+
+
+
+
+
+
+
+  <!--  old cod here for layouts
+     <div fxLayout="row"  fxLayoutAlign=" start stretch" >
+    <h1>Row start End</h1>
+    <div fxFlex="10"  class="one">One start end</div>
+    <div fxFlex="40" class="two">Two Table start end</div>
+    <div fxFlex="40" class="three">Three Table</div>
+    <div fxFlex="10" class="two">Four Table start end</div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div fxLayout="column"  fxFlexAlign="space-around center" fxLayoutGap="10px">
+    <h1>Column</h1>
+    <div fxFlex class="one">One Table</div>
+    <div fxFlex class="two">Two Table</div>
+  </div>
+
+<mat-divider></mat-divider>
+
+
+<mat-divider></mat-divider>
+
+<div fxLayout="row"  fxLayoutAlign="start end" >
+  <h1>Row start End</h1>
+  <div  class="one">One Tablefgfgfgfgfgfgfgfgfgf start end</div>
+  <div class="two">Two Table start end</div>
+  <div class="three">Three Table</div>
+  <div class="two">Four Table start end</div>
+</div> -->
+<!-- </div> -->

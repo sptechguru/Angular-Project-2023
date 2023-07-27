@@ -1,0 +1,10 @@
+.button {
+  width: 50px;
+  height: 80px;
+  background-color: red;
+}
+
+body {
+  /* background-color: red !important; */
+  height: 100vh !important;
+}/*# sourceMappingURL=app.component.css.map */

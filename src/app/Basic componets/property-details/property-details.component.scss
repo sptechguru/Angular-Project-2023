@@ -1,0 +1,68 @@
+.bgimg img {
+    width: 100vw;
+    height: 23vh;
+    border-radius: 2.5rem;
+}
+.bgimg2 img {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 2.5rem;
+
+}
+
+// .container-fluid{
+//     border: 1px solid red;
+// }
+.iconscolor i {
+    color: skyblue;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+.filetxt p {
+ font-size: 1rem;
+ margin-bottom: 1rem;
+ font-weight: bold;
+}
+.btnoffer button {
+    margin-bottom: 50px;
+    border: 1px solid skyblue;
+    border-radius: 1.5rem;
+    width: 60%;
+    height: 3rem;
+    background-color :skyblue;
+    color: #fff;
+}
+
+.accordion-item:first-of-type .accordion-button {
+    font-weight: bold;
+    color: skyblue;
+}
+
+.accordion-item:last-of-type {
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border: none;
+}
+.accordion-collapse .collapse{
+    border: none;
+}
+
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {  }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {  }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {  }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { }

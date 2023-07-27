@@ -1,0 +1,23 @@
+<br/>
+<div class="container">
+
+<h1> 1st Step - Angular Dynamic Componets.. for hi,Hello,GoodBye </h1>
+
+<h3>
+  Now I'am Making Dynamic Components for  <span class="text-danger font-weight-bold">*ngComponentOutlet="say"</span> Ngcomponent Outlet Link
+Instiates a single Componenet type and inserts its Host view ito current View, NgComponentOutlet provides a declartive approach
+for dynamic component creations.
+</h3>
+<div class="row">
+
+  <div class="col-md-6">
+<ng-container *ngComponentOutlet="say"></ng-container>
+<button type="button" (click)="sayHi()" class="btn btn-success">Say Hi</button> &nbsp;
+<button type="button" (click)="sayHello()" class="btn btn-danger">sayHello</button>&nbsp;
+<button type="button" (click)="sayGoodBye()"class="btn btn-warning">sayGoodbye</button>&nbsp;
+
+</div>
+
+
+</div>
+

@@ -1,0 +1,2 @@
+test command for code verge show data
+ng test --code-coverage

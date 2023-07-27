@@ -1,0 +1,75 @@
+<br/>
+
+<div class="container bg-light my-2 ">
+  <h3 class="text-center font-weight-bold text-danger">That is using Behaviour Subject is set of intial value</h3>
+  <div class="row">
+
+    <div class="col-md-4">
+      <h1>Child one</h1>
+      <app-child1></app-child1>
+    </div>
+
+    <div class="col-md-4">
+     <h1>Child two</h1>
+     <app-child2></app-child2>
+    </div>
+
+    <div class="col-md-4">
+      <h1>Barcode Scacner..</h1>
+       <ngx-qrcode
+      [elementType]="elementType"
+      [errorCorrectionLevel]="correctionLevel"
+      [value]="value"
+      cssClass="bshadow"></ngx-qrcode>
+      <textarea [(ngModel)] = "value"></textarea>
+     </div>
+
+  </div>
+<hr/>
+</div>
+<hr/>
+
+<div class="container" >
+  <h1 class="text-center">Home is Parents Compoonents |{{title}}
+    <span class="text-danger font-weight-bold">(That is String Interpolation/[{{title}})]</span></h1>
+<br/>
+
+     Bidirectional Data Binding
+ <h2 class="text-danger font-weight-bold">Two-way/  [(ngModel)] Bidirectional Binding Example</h2>
+
+ <input type="text" class="form-control" [(ngModel)]="inputValue"/><br/>
+ <h1>{{inputValue}} </h1>
+
+ <h2 class="text-center font-weight-bold text-danger">This is used data in services all data here </h2>
+  <table class="table table-primary" >
+      <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Post</th>
+    </tr>
+
+  </thead>
+
+    <tbody>
+
+      <tr *ngFor="let em of emp">
+        <td>{{em.id}}</td>
+        <td>{{em.name}}</td>
+        <td>{{em.post}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+</div>
+
+
+<div class="container">
+  <!-- that is parent data -->
+  <app-about [hero]="data"></app-about>
+</div>
+
+
+
+<br/>
+

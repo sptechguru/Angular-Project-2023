@@ -1,0 +1,38 @@
+<h1>custobs works!</h1>
+
+<section class="container">
+  <div class="row">
+
+  <div class="col-md-6">
+ <strong>Ex 01 (manual)</strong>
+ <hr/>
+ <ul [ngClass]="techstatus =='completed'? 'completed': techstatus == 'error'?'error': ''"
+ class="techlist error" id="elcontainer">
+
+  </ul>
+  </div>
+
+  <div class="col-md-6">
+    <strong>Ex 02 (Custom Obserbales )</strong>
+    <hr/>
+    <ul [ngClass]="techstatus2 =='completed'? 'completed': techstatus2 == 'error'?'error': ''"
+  class="techlist complete " id="elcontainer2">
+     </ul>
+     </div>
+    </div>
+  <br/>
+
+
+  <!-- <div class="row">
+    <strong>Ex 03 (Rnadom Name )</strong>
+<br/>
+<br/>
+    <div class="col-md-12">
+      <p class="bg-light py-2 px-3 border roundend">
+      <strong>Rnadom Name:</strong>
+      'santosh' ,'kumar', 'pal'
+    </p>
+    </div>
+  </div> -->
+
+</section>

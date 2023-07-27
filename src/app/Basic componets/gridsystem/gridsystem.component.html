@@ -1,0 +1,22 @@
+
+<div class="container">
+  <button class="btn btn-success mx-2" (click)="updateRow()" >Update Row</button>
+<button class="btn btn-primary mx-2" (click)="updatecell()">Updated Cell</button>
+<button class="btn btn-success mx-2" (click)="UpdateAllRow()">Update ALL Row</button>
+<button class="btn btn-danger mx-2"(click)="clear()">ClearALL</button>
+<br/>
+<br/>
+
+<ag-grid-angular
+    style="width: 90%; height: 550px;"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)=OngridReaddy($event)
+    [pagination] = 'true'
+    [paginationPageSize]="true"
+
+>
+</ag-grid-angular>
+
+</div>

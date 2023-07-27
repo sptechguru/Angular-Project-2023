@@ -1,0 +1,39 @@
+
+<section class="container-fluid">
+  <table class="table table-light">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Prodcut pic</th>
+        <th scope="col">Prodcut name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quntity</th>
+        <th scope="col">Total</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of procutlist; let i =index;">
+        <td>{{pro.id}}</td>
+        <td class="bgimg">
+          <a href="{{pro.image}}" style="cursor: pointer;">
+          <img class="img-fluid img-reponsive img-thumbnail rounded mx-auto d-block" src="{{pro.image}}" /> </a>
+        </td>
+        <td>{{pro.title}}</td>
+        <td>RS.{{pro.price}}</td>
+        <td>RS.{{pro.rating.count}}</td>
+        <td>Total</td>
+        <td>
+          <button type="button" class="btn btn-danger btn-md btn-sm">Delete</button>
+
+        </td>
+
+
+      </tr>
+    </tbody>
+
+  </table>
+  <!-- <button type="button" class="btn btn-danger btn-md btn-block mx-3">Clear cart</button>
+  <button type="button" class="btn btn-success btn-md btn-block">Paymnet</button> -->
+
+</section>

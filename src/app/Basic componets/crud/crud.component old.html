@@ -1,0 +1,46 @@
+<div class="container-fluid  bg-light ">
+  <table class="table table-">
+
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+
+        <th scope="col">Zip code</th>
+        <th scope="col">City</th>
+        <th scope="col">Edit</th>
+        <th scope="col"> Delete</th>
+
+
+      </tr>
+
+    </thead>
+
+    <tbody class="bg-">
+      <tr *ngFor="let pro of products ">
+        <td>{{pro.id}}</td>
+        <td>{{pro.name}}</td>
+        <td>{{pro.username}}</td>
+        <td>{{pro.email}}</td>
+        <td>{{pro.phone}}</td>
+
+        <td>{{pro.address.zipcode}}</td>
+        <td>{{pro.address.city}}</td>
+        <!-- <td>{{pro.address.geo.lat}}</td> -->
+        <td>
+          <button mat-raised-button color  ="primary" type="submit" class="ml-3" (click)="Edits()">Edit</button>
+        </td>
+        <td>
+         <button mat-raised-button color="accent" type="submit" class="ml-3" (click)="Dlete()">Delete</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

@@ -1,0 +1,77 @@
+<br/>
+
+<mat-card class="card23">
+
+<mat-card-title *ngIf="success" class="text-center text-danger">Contact Page</mat-card-title>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input
+       type="text"
+        formControlName="name"
+        id="email"
+        matInput placeholder="Enter Your Name"
+        required="true">
+        <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+          <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+        </div>
+      </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+       type="email"
+        formControlName="email"
+        id="email"
+        matInput placeholder="Enter Your email"
+        required="true">
+        <div *ngIf="submitted && messageForm.controls.email.errors" class="error">
+          <div *ngIf="messageForm.controls.email.errors.required">Your Emaill is required</div>
+        </div>
+      </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Phone</mat-label>
+    <input formControlName="phone" type="text"  id="password" matInput placeholder="Enter Your Phone Number">
+    <div *ngIf="submitted && messageForm.controls.phone.errors" class="error">
+      <div *ngIf="messageForm.controls.phone.errors.required"> phone is required</div>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field  class="example-full-width">
+    <mat-label>How May We can help You?</mat-label>
+    <textarea matInput formControlName="message" ></textarea>
+    <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+      <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
+    </div>
+  </mat-form-field>
+
+  <br/>
+
+  <button mat-raised-button color="accent" type="submit" class="ml-3">Submit</button>
+ </form>
+
+<br/>
+
+<div *ngIf="submitted" class="">
+
+  <strong>Name:</strong>
+  <span>{{ messageForm.controls.name.value }}</span>
+<br/>
+  <strong>Email:</strong>
+  <span>{{ messageForm.controls.email.value }}</span>
+  <br/>
+
+  <strong>Phone:</strong>
+  <span>{{ messageForm.controls.phone.value }}</span>
+
+  <br/>
+
+  <strong>Message:</strong>
+  <span>{{ messageForm.controls.message.value }}</span>
+
+</div>
+</mat-card>
+

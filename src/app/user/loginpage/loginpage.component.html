@@ -1,0 +1,34 @@
+<br/>
+<br/>
+<br/>
+<br/>
+
+<mat-card class="card23">
+  <br/>
+
+<mat-card-title class="text-center">User Login Page</mat-card-title>
+
+<form [formGroup]="loginform">
+
+      <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+       type="email"
+        formControlName="lemail"
+        id="email"
+        matInput placeholder="Enter Your email"
+        required="true">
+      </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input formControlName="lpassword" type="password"  id="password" matInput placeholder="Password">
+  </mat-form-field>
+
+  <!-- <button mat-raised-button color="accent" type="submit" [disabled]="!logform.valid">Login</button>
+  <br/>
+  <br/> -->
+
+  <button mat-raised-button color="accent" type="submit" (click)="logincf()" class="ml-3">Login</button>
+ </form>
+</mat-card>

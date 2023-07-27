@@ -1,0 +1,93 @@
+[
+
+  {
+    "name":"sanjay" ,
+    "email":"sanjay@gmail.com",
+    "mobile":9632587411,
+    "state":"M.p",
+    "gender":"male"
+   },
+
+   {
+     "name":"Rani" ,
+     "email":"rani@gmail.com",
+     "mobile":8632587411,
+     "state":"u.p",
+     "gender":"Female"
+    },
+
+
+
+    {
+     "name":"shorabh" ,
+     "email":"shroabh@gmail.com",
+     "mobile":6932587411,
+     "state":"Indore",
+     "gender":"male"
+    },
+
+
+    {
+     "name":"priya" ,
+     "email":"priay@gmail.com",
+     "mobile":8523687411,
+     "state":"Kanpur",
+     "gender":"Female"
+    },
+
+
+    {
+     "name":"Rishi" ,
+     "email":"rishi@gmail.com",
+     "mobile":6932587411,
+     "state":"M.p",
+     "gender":"male"
+    },
+
+
+    {
+     "name":"mukesh" ,
+     "email":"muk@gmail.com",
+     "mobile":3212587411,
+     "state":"Bhopal",
+     "gender":"male"
+    },
+
+
+    {
+     "name":"Neelish" ,
+     "email":"neelu@gmail.com",
+     "mobile":4561287411,
+     "state":"lucknow",
+     "gender":"male"
+    },
+
+
+    {
+     "name":"mithun" ,
+     "email":"mithun@gmail.com",
+     "mobile":3212587411,
+     "state":"ladak",
+     "gender":"male"
+    },
+
+
+    {
+     "name":"sanjan" ,
+     "email":"sanjan@gmail.com",
+     "mobile":9632587411,
+     "state":"M.p",
+     "gender":"Female"
+    },
+
+
+    {
+     "name":"shruthi" ,
+     "email":"shruthi@gmail.com",
+     "mobile":9632587421,
+     "state":"M.p",
+     "gender":"Female"
+    }
+
+
+]

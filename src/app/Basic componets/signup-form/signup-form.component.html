@@ -1,0 +1,105 @@
+<br/>
+
+<mat-card class="card23" *ngIf="showForm">
+  <br/>
+<mat-card-title class="text-center">Signup Page</mat-card-title>
+<form [formGroup]="spform">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>First Name</mat-label>
+    <input
+      matInput placeholder="Enter Your Name"
+       type="text"
+        formControlName="fname"
+        id="fname"
+        pattern=""
+        required="true">
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+    <mat-label>Last Name</mat-label>
+    <input
+       type="text"
+        formControlName="lname"
+        id="lname"
+        matInput placeholder="Enter last Name"
+        required="true">
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+       type="email"
+        formControlName="email"
+        id="email"
+        matInput placeholder="Enter Your email"
+        required="true">
+      </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input formControlName="password" type="password"  id="password" matInput placeholder="Password">
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Confirm Password</mat-label>
+    <input formControlName="password2" type="password"  id="password2" matInput placeholder=" Confirm Password">
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" type="submit" [disabled]="!spform.valid">Signup</button>
+
+
+  <button mat-raised-button color="warn" (click)="reset()" class="ml-3">Reset</button>
+
+<br/>
+<br/>
+
+  <button mat-raised-button color="primary" required="true" type="submit" (click)="sp()" >Data Show</button>
+
+</form>
+</mat-card>
+
+<mat-card *ngIf="!showForm" class="card23">
+  <br/>
+
+  <button mat-raised-button color="accent" type="submit" (click)="goBack()">Go Back</button>
+  <br/>
+  <br/>
+
+
+<h1 class="text-danger">Your Registation Succesfully.....</h1>
+
+<div class="form-group">
+  <label for="exampleInputPassword1">FirstName</label>
+  <p>{{spform.value.fname}}</p>
+</div>
+
+<div class="form-group">
+  <label for="exampleInputPassword1">Last Name</label>
+  <p>{{spform.value.lname}}</p>
+</div>
+
+
+<div class="form-group">
+  <label for="exampleInputPassword1">Email</label>
+  <p>{{spform.value.email}}</p>
+</div>
+
+<div class="form-group">
+  <label for="exampleInputPassword1">Password</label>
+  <p>{{spform.value.password}}</p>
+</div>
+
+
+<div class="form-group">
+  <label for="exampleInputPassword1">Confirm Password</label>
+  <p>{{spform.value.password2}}</p>
+</div>
+
+</mat-card>
+
+
