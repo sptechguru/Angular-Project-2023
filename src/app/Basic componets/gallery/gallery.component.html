@@ -1,28 +1,61 @@
 
-<div class="pageinfo container">
+<div class="container">
 
-  <div class="row"  >
+  <div class="row" >
 
-    <div  class="p-2 col-md-4"*ngFor="let item of dataimg;" >
+  <ng-container>
+    <div  class="p-2 col-md-4 col-lg-4 col-12"*ngFor="let item of filterStatus('To Do')" >
       <mat-card class="example-card">
+        <h2 class="text-center">To Do</h2>
         <mat-card-header>
-          <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          <mat-card-title>{{item.title}}</mat-card-title>
-          <mat-card-subtitle>{{item.subtittle}}</mat-card-subtitle>
+          <mat-card-title>{{item?.ticketName}} Name.......</mat-card-title>
+          <mat-card-subtitle>{{item?.status}} status.......</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="{{item.url}}" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <p>
+          <!-- <p>
             {{item.contnent}}
-          </p>s
+          </p> -->
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">LIKE</button>
-          <button mat-raised-button color="accent">SHARE</button>
-        </mat-card-actions>
       </mat-card>
     </div>
-<hr/>
+  </ng-container>
+
+  
+  <ng-container>
+    <div  class="p-2 col-md-4 col-lg-4 col-12"*ngFor="let item of filterStatus('In Progress')" >
+      <mat-card class="example-card">
+        <h2 class="text-center">In Progress </h2>
+        <mat-card-header>
+          <mat-card-title>{{item.ticketName}}</mat-card-title>
+          <mat-card-subtitle>{{item.status}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <!-- <p>
+            {{item.contnent}}
+          </p> -->
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+
+  
+  <ng-container>
+    <div  class="p-2 col-md-4 col-lg-4 col-12"*ngFor="let item of filterStatus('Done')" >
+      <mat-card class="example-card">
+        <h2 class="text-center">Done</h2>
+        <mat-card-header>
+          <mat-card-title>{{item.ticketName}}</mat-card-title>
+          <mat-card-subtitle>{{item.status}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <!-- <p>
+            {{item.contnent}}
+          </p> -->
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+
 </div>
 
 

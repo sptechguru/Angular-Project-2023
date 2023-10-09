@@ -1,5 +1,6 @@
 
 import {Component,OnInit} from '@angular/core';
+import { AuthLoginService } from './service/auth-login.service';
 
 
 @Component({
@@ -12,16 +13,24 @@ import {Component,OnInit} from '@angular/core';
 export class AppComponent implements OnInit {
 
   title = 'test-app';
-  isAuth:boolean = true;
+  isAuth:boolean = false;
+  userDetails:any;
 
-  constructor() { }
+  constructor(private login:AuthLoginService) { }
+
 
   ngOnInit(): void {
+    this.login.userDetails.subscribe((res)=>{
+      console.log('appp Signup.......',res);
     let userData: any = localStorage.getItem("signup");
+    this.userDetails = JSON.parse(userData);
+    console.log('login Data', this.userDetails);
     if(userData){
       this.isAuth = true;
     }
-  }
+    })
+
+}
 
 }
 

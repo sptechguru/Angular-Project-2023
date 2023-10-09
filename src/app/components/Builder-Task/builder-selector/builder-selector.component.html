@@ -1,0 +1,57 @@
+<section class="container-fluid">
+    <button routerLink="/pages/builder-fixture" class="btn btn-dark btn-md">Back</button>
+    <div class="container bg-light py-2">
+        <div class="row">
+
+            <div class="col-md-1">
+                <h2>Selection</h2>
+            </div>
+            <div class="col-md-6">
+                <!-- (change)="selectionChange($event.target.value)"> -->
+
+                <select class="form-select" aria-label="Default select example">
+                    <!-- <option selected>Selection</option> -->
+                    <option *ngFor="let item of marketList let i = index" [value]="item.MarketId">{{item.MarketName}}
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="col-md-1">
+                <h2>Legs</h2>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" aria-label="Default select example">
+                    <!-- <option selected>Selection</option> -->
+                    <option *ngFor="let item of selectionList" [value]="item.selectionValue">{{item.selectionValue}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <h2 class="font-weight-bold py-2">Bet Builder odds: <span
+                class="text-danger font-weight-bold">{{marketList.length}}</span></h2>
+
+
+        <div class="table-responsive">
+            <table class="table table-light table-hover table-bordered text-center ">
+                <thead class="text-uppercase">
+                    <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Key stats</th>
+                        <th scope="col">Market</th>
+                        <th scope="col">Outcome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-capitalize" *ngFor="let item of marketList let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{item.MasterMarketId}}</td>
+                        <td>{{item.MarketName}}</td>
+                        <td>{{item.MasterMarketName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>

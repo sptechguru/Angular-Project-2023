@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Employee } from 'src/app/Models/Employess';
 import { LocalStorageJsonServerService } from 'src/app/service/local-storage-json-server.service';
 
 @Component({
@@ -85,4 +86,61 @@ export class LocalStorageCrudComponent implements OnInit {
    })
 
 }
+
+
+createTodo() {
+  console.log(this.empForm.value);
+  let payload = this.empForm.value;
+  this.api.createMethod(payload).subscribe((res) => {
+    console.log(res);
+    this.getEmp_list();
+    this.empForm.reset();
+  }, error => {
+    console.log(error);
+  })
+
+}
+
+
+searchEmployees(event: any) {
+  console.log(event)
+  let filteredEmployees: Employee[] = [];
+  if (event === '') {
+    this.employeesToDisplay = this.empList;
+  } else {
+    filteredEmployees = this.empList.filter((val:any, index:any) => {
+      let targetKey = val.firstname.toLowerCase() + '' + val.lastname.toLowerCase();
+      let searchKey = event.toLowerCase();
+      return targetKey.includes(searchKey);
+    });
+    this.employeesToDisplay = filteredEmployees;
+  }
+}
+
+
+searchUser(event:any){
+  console.log('ssssssssss',event.target.value);
+  this.empList.filter((item:any)=>{
+      // console.log(item.id == item.id);
+      if(item.id == event.target.value){
+        this.userId = item.id
+        console.log(this.userId);
+        this.api.getUpdateByid(this.userId).subscribe((res)=>{
+          console.log(res);
+          this.empList = res;
+        } ,error =>{
+          console.log(error);
+        })
+      }
+      else{
+        console.log("user not found");
+      }
+
+
+  })
+}
+
+
+
+
 }

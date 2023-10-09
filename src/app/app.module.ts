@@ -54,6 +54,8 @@ import { DemoComponent } from './Basic componets/demo/demo.component';
 import { Demo2Component } from './Basic componets/demo2/demo2.component';
 import { MaterialModule } from './Modules/materials/materials.module';
 import { LocalStorageCrudComponent } from './components/crud/local-storage-crud/local-storage-crud.component';
+import { BuilderFeaturesComponent } from './components/Builder-Task/builder-features/builder-features.component';
+import { BuilderSelectorComponent } from './components/Builder-Task/builder-selector/builder-selector.component';
 // import { NgChartsModule } from 'ng2-charts';
 
 
@@ -95,7 +97,9 @@ import { LocalStorageCrudComponent } from './components/crud/local-storage-crud/
     TaskComponent,
     DemoComponent,
     Demo2Component,
-    LocalStorageCrudComponent
+    LocalStorageCrudComponent,
+    BuilderFeaturesComponent,
+    BuilderSelectorComponent
 
   ],
   imports: [

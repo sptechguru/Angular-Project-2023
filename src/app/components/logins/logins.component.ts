@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthLoginService } from 'src/app/service/auth-login.service';
 // import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2';
@@ -16,11 +17,12 @@ export class LoginsComponent implements OnInit {
   submitted: boolean = false;
   userDetails: any;
 
-  constructor(private api: AuthService, public route: Router) {
+  constructor(private api: AuthService, public route: Router ,
+    private Login:AuthLoginService) {
     this.loginform = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.pattern('^.+@.+\..+$')]),
       password: new FormControl('', [Validators.required]),
-    });
+    });   
   }
 
   get f() { return this.loginform.controls; };
@@ -58,15 +60,19 @@ export class LoginsComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.Login.userDetails.subscribe((res)=>{
+      console.log('login Signup.......',res);
     let userData: any = localStorage.getItem("signup");
     this.userDetails = JSON.parse(userData);
     console.log('login Data', this.userDetails);
+    })
 
   }
 
   localLoginMethod() {
     let data = this.loginform.value;
     const userExist = this.userDetails;
+    this.Login.setLoginDetails(userExist);
     if (userExist != undefined) {
       this.userDetails.find((item: any) => {
         if (item.email == data.email && item.password == data.password) {
@@ -84,9 +90,6 @@ export class LoginsComponent implements OnInit {
     }
 
   }
-
-
-
 
 }
 

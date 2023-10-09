@@ -11,6 +11,8 @@ import { HomeComponent } from 'src/app/Basic componets/home/home.component';
 import { MapComponent } from 'src/app/Basic componets/map/map.component';
 import { PostComponent } from 'src/app/Basic componets/post/post.component';
 import { PropertyDetailsComponent } from 'src/app/Basic componets/property-details/property-details.component';
+import { BuilderFeaturesComponent } from 'src/app/components/Builder-Task/builder-features/builder-features.component';
+import { BuilderSelectorComponent } from 'src/app/components/Builder-Task/builder-selector/builder-selector.component';
 import { CartsComponent } from 'src/app/components/Ecommerce/carts/carts.component';
 import { ProdcutsComponent } from 'src/app/components/Ecommerce/prodcuts/prodcuts.component';
 import { LocalStorageCrudComponent } from 'src/app/components/crud/local-storage-crud/local-storage-crud.component';
@@ -36,6 +38,9 @@ const routes: Routes = [
   { path: 'propde', component: PropertyDetailsComponent },
   { path: 'task', component: TaskComponent },
   { path: 'local-server', component: LocalStorageCrudComponent },
+  { path: 'builder-fixture', component: BuilderFeaturesComponent },
+  { path: 'builder-selection', component: BuilderSelectorComponent },
+
 
 ];
 

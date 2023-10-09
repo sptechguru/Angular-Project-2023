@@ -1,83 +1,91 @@
 <section class="container-fluid bgimgs">
-  <div class="container card">
-    <h1 class="text-center text-primary font-weight-bold py-2">Signup ? </h1>
-
-    <form [formGroup]="myform" (ngSubmit)="onSubmit()" class="py-3">
-
-      <div class="mb-3">
-        <label class="form-label">First Name</label>
-        <input type="text" class="form-control" formControlName="firstName" placeholder="Enter your First name"
-          [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
-        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+    <div class="container py-5 card">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-12">
+          <h1 class="text-center text-primary font-weight-bold py-2">Signup ? </h1>
+          <form [formGroup]="myform" (ngSubmit)="onSubmit()" class="py-3">
+           <div class="row">          
+            <div class="mb-3 col-md-6 col-lg-6">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-control" formControlName="firstName" placeholder="Enter your First name"
+                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+              </div>
+            </div>
+      
+            <div class="mb-3 col-md-6 col-lg-6" >
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Enter your Last name"
+                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last name is required</div>
+              </div>
+            </div>
+      
+            <div class="mb-3 col-md-6 col-lg-6">
+              <label class="form-label">Mobile Number</label>
+              <input type="text" class="form-control" formControlName="phone_Number" placeholder="Enter your Mobile Number"
+                [ngClass]="{ 'is-invalid': submitted && f.phone_Number.errors }">
+              <div *ngIf="submitted && f.phone_Number.errors" class="invalid-feedback">
+                <div *ngIf="f.phone_Number.errors.required">Mobile Number is required</div>
+              </div>
+            </div>
+      
+            <div class="mb-3 col-md-6 col-lg-6">
+              <label class="form-label">Gender</label>
+              <select class="form-select" formControlName="gender" aria-label="Default select example">
+                <option value="male">Male</option>
+                <option value="feamle">Feamle</option>
+              </select>
+              <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                <div *ngIf="f.gender.errors.required">gender is required</div>
+              </div>
+            </div>
+      
+      
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="Enter your Email"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">email is required</div>
+              </div>
+            </div>
+      
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" formControlName="password" placeholder="Enter your password"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">password is required</div>
+              </div>
+            </div>
+      
+            <div class="mb-3">
+              <label class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" formControlName="confirm_password"
+                placeholder="Enter your Confirm password"
+                [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }">
+              <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
+                <div *ngIf="f.confirm_password.errors.required">Confirm password is required</div>
+              </div>
+            </div>
+      
+            <!-- ssssssssssssss@    -->
+      
+          <button type="submit" [disabled]="!myform.valid" class="btn btn-success py-2 mx-2">signup</button>
+          <br/>
+            <button routerLink="/login" type="button" class="btn btn-link">Already have account ?</button>
+        </div>
+          </form>
+          
+        </div>
+      
+        <div class="col-md-6 col-lg-6 col-12 py-5">
+          <img src="https://cdni.iconscout.com/illustration/premium/thumb/login-denied-4560629-3784195.png" class="img-fluid img-responsive"  alt="Not Images"/>
         </div>
       </div>
-
-      <div class="mb-3">
-        <label class="form-label">Last Name</label>
-        <input type="text" class="form-control" formControlName="lastName" placeholder="Enter your Last name"
-          [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
-        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-          <div *ngIf="f.lastName.errors.required">Last name is required</div>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Mobile Number</label>
-        <input type="text" class="form-control" formControlName="phone_Number" placeholder="Enter your Mobile Number"
-          [ngClass]="{ 'is-invalid': submitted && f.phone_Number.errors }">
-        <div *ngIf="submitted && f.phone_Number.errors" class="invalid-feedback">
-          <div *ngIf="f.phone_Number.errors.required">Mobile Number is required</div>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Gender</label>
-        <select class="form-select" formControlName="gender" aria-label="Default select example">
-          <option value="male">Male</option>
-          <option value="feamle">Feamle</option>
-        </select>
-        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-          <div *ngIf="f.gender.errors.required">gender is required</div>
-        </div>
-      </div>
-
-
-      <div class="mb-3">
-        <label class="form-label">Email address</label>
-        <input type="email" class="form-control" formControlName="email" placeholder="Enter your Email"
-          [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
-        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">email is required</div>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" formControlName="password" placeholder="Enter your password"
-          [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">password is required</div>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Confirm Password</label>
-        <input type="password" class="form-control" formControlName="confirm_password"
-          placeholder="Enter your Confirm password"
-          [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }">
-        <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
-          <div *ngIf="f.confirm_password.errors.required">Confirm password is required</div>
-        </div>
-      </div>
-
-      <!-- ssssssssssssss@    -->
-      <button type="submit" class="btn btn-success">signup</button>
-
-      <!--
-    <button type="submit" [disabled]="!myform.valid" class="btn btn-success">signup</button> -->
-      <button routerLink="/login" type="button" class="btn btn-link">Already have account ?</button>
-
-    </form>
+    
   </div>
 </section>

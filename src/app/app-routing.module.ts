@@ -9,10 +9,10 @@ import { AuthGuards } from './auth/auth.guard';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '', redirectTo: '/signup', pathMatch: 'full'},
   {path: 'login', component:LoginsComponent },
   {path: 'signup', component:SignupComponent },
-  {path: 'forget', component:ForgetComponent },
+  // {path: 'forget', component:ForgetComponent },
   
   // That is admin Module is LazyLoading concepts
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path:'pages',loadChildren:()=>import('./Modules/pages/pages.module')
     .then(mod=>mod.PagesModule)
-    // ,canActivate:[AuthGuards]
+    ,canActivate:[AuthGuards]
   },
   {
     path:'user',loadChildren:()=>import('./user/user.module')
@@ -37,7 +37,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 
 export class AppRoutingModule { }

@@ -83,10 +83,7 @@ export class DashbordsComponent implements OnInit {
       let postobj = {
         user_id: val
       }
-
       // Local storage data delete user Data;
-
-
       this.api.postMethod('deleteUser', postobj).subscribe((data) => {
         console.log(data);
         this.getuserlist();

@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthLoginService } from 'src/app/service/auth-login.service';
 import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2';
 
@@ -17,7 +18,8 @@ export class SignupComponent implements OnInit {
   submitted: boolean = false;
   userSingupList:any = [];
 
-    constructor( private api: AuthService , public route:Router) {
+    constructor( private api: AuthService , public route:Router ,
+      private Login:AuthLoginService) {
     	this.myform = new FormGroup({
         firstName: new FormControl(	'',	[Validators.required]),
         lastName: new FormControl(  '',  [Validators.required]),
@@ -26,11 +28,14 @@ export class SignupComponent implements OnInit {
         email: new FormControl(  '',  [Validators.required, Validators.pattern('^.+@.+\..+$')]),
         password: new FormControl(  '',  [Validators.required]),
         confirm_password: new FormControl(  '',  [Validators.required]),
-
+        user_id: new FormControl( 1,  [Validators.required]),
       });
   	}
 
     ngOnInit(): void {
+      this.Login.userDetails.subscribe((res)=>{
+        console.log('res Signup.......',res);
+      })
     }
 
   get f(): { [key: string]: AbstractControl } {
@@ -49,7 +54,8 @@ onSubmit (): void  {
   password: data.password,
   confirm_password:data.confirm_password,
   gender: data.gender,
-  phone_Number:data.phone_Number
+  phone_Number:data.phone_Number,
+  user_id:data.user_id +1
   }
   console.log(this.myform.value);
 
@@ -58,7 +64,8 @@ onSubmit (): void  {
   const userData = localStorage.getItem("signupData");
   if(userData == null){
     this.userSingupList.push(data)
-    localStorage.setItem("signup", JSON.stringify(this.userSingupList));
+    let userdetails = localStorage.setItem("signup", JSON.stringify(this.userSingupList));
+    // this.Login.setLoginDetails(userdetails);
     Swal.fire('Oops...', 'Your Registation Succefully', 'success')
     this.myform.reset();
     this.route.navigate(['/login']);
