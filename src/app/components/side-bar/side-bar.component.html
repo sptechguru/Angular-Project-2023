@@ -8,10 +8,26 @@
         <i class="material-icons">menu</i>
       </button>
       <span class="user-text">SP_ANGULAR_PRO</span>
+
+      <div class="mx-5">
+        <mat-form-field appearance="fill" >
+          <!-- <mat-label>Search Prodcut</mat-label> -->
+          <input matInput [(ngModel)]="searchTerm" (keyup)="searchProdcuts($event)" placeholder="search Prodcuts ..">
+        </mat-form-field>
+      </div>
+  
+        
       <span class="example-fill-remaining-space"></span>
       Welcome : <span class="user-text font-weight-bold text-capitalize text-primary"> {{userDetails[0].firstName}} {{userDetails[0].lastName}}</span>
+    
       <button class="btn btn-md btn-danger mx-2" (click)="logout()"> Logout</button> 
-      <!-- <button class="btn btn-md btn-danger mx-2" routerLink="/signup">Singup</button>
+     
+      <button class="btn btn-md btn-dark" (click)="goTocartList()"> 
+        <i class="fas fa-shopping-cart fa-2x"></i>
+      <span class="badge badge-success">{{cartItem}}</span>
+      </button> 
+
+      <!-- <button class="btn btn-md btn-danger mx-2" routerLink="/signup">Singup</button/>
       <button class="btn btn-md btn-success mx-2" routerLink="/login"> Login</button> -->
     </mat-toolbar>
     <div class="main-cont">

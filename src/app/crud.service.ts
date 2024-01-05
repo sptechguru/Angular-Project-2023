@@ -12,6 +12,13 @@ export class CrudService {
 
   url = 'https://jsonplaceholder.typicode.com/users/'
 
+  dataListUrl:any = 'https://reqres.in/api/users?';
+
+  
+  getDataList(page:any){
+    return this.http.get<any>(this.dataListUrl+'page='+page);
+  }
+
   // url = 'http://dummy.restapiexample.com/api/v1/employees'
 
   // url = "https://api.covid19india.org/data.json"
@@ -28,6 +35,8 @@ export class CrudService {
       obs.complete();
     })
   }
+
+
 
 
 }

@@ -9,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class ProdcutsComponent implements OnInit {
 
   procutlist:any = [];
+  serachKey : any = '';
 
   constructor(private api:CartService) { }
 
   ngOnInit(): void {
     this.getProList();
+    this.api.searchBar.subscribe((res)=>{
+      this.serachKey = res;
+      console.log('search Prodcuts ', this.serachKey);
+    })
   }
 
   getProList(){
@@ -21,8 +26,15 @@ export class ProdcutsComponent implements OnInit {
       console.log(res);
       this.procutlist = res;
       console.log(this.procutlist);
-
+    }, error=>{
+      console.log(error);
     })
+  }
+
+
+  addCart(item:any){
+    this.api.addtoCart(item);
+    // console.log('cart item of ', item);
   }
 
 }

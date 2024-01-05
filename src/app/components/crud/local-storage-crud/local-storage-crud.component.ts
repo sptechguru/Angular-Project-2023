@@ -38,11 +38,10 @@ export class LocalStorageCrudComponent implements OnInit {
   }
 
   getEmp_list() {
-    this.api.getMethod().subscribe((res) => {
+    this.api.getMethod().subscribe((res)=>{
       this.empList = res;
-      console.log(this.empList);
-    }, error => {
-      console.log(error);
+    }, error=>{
+      console.log('error', error)
     })
   }
 

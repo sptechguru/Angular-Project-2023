@@ -1,6 +1,5 @@
 import { NewsitemComponent } from './components/newsitem/newsitem.component';
 import { ProdcutsComponent } from './components/Ecommerce/prodcuts/prodcuts.component';
-import { CartsComponent } from './components/Ecommerce/carts/carts.component';
 import { CrudComponent } from './Basic componets/crud/crud.component';
 import { TestappService } from './testapp.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -56,6 +55,10 @@ import { MaterialModule } from './Modules/materials/materials.module';
 import { LocalStorageCrudComponent } from './components/crud/local-storage-crud/local-storage-crud.component';
 import { BuilderFeaturesComponent } from './components/Builder-Task/builder-features/builder-features.component';
 import { BuilderSelectorComponent } from './components/Builder-Task/builder-selector/builder-selector.component';
+import { ProdcutDetailsComponent } from './components/Ecommerce/prodcut-details/prodcut-details.component';
+import { CheckoutComponent } from './components/Ecommerce/checkout/checkout.component';
+import { SearcTermPipe } from './Modules/pages/searc-term.pipe';
+import { ChildComponent } from './components/child/child.component';
 // import { NgChartsModule } from 'ng2-charts';
 
 
@@ -86,7 +89,6 @@ import { BuilderSelectorComponent } from './components/Builder-Task/builder-sele
     CustobsComponent,
     PropertyDetailsComponent,
     NewSidbarComponent,
-    CartsComponent,
     ProdcutsComponent,
     NewsitemComponent,
     DashbordsComponent,
@@ -99,7 +101,11 @@ import { BuilderSelectorComponent } from './components/Builder-Task/builder-sele
     Demo2Component,
     LocalStorageCrudComponent,
     BuilderFeaturesComponent,
-    BuilderSelectorComponent
+    BuilderSelectorComponent,
+    ProdcutDetailsComponent,
+    CheckoutComponent,
+    SearcTermPipe,
+    ChildComponent
 
   ],
   imports: [
@@ -110,7 +116,6 @@ import { BuilderSelectorComponent } from './components/Builder-Task/builder-sele
     ReactiveFormsModule,
     HttpClientModule,
     FlexLayoutModule,
-    BrowserModule,
     AgGridModule.withComponents([]),
     NgxQRCodeModule,
     NgSearchFilterModule,

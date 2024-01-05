@@ -9,11 +9,8 @@ import { Injectable } from '@angular/core';
 export class NewsapiService {
 
 // Your API key is: db9b6a7bd1de49f0a7dd8748c0d76d70
-
   public baseURL = environment.Newsapi;
-
   public baseURL2 = environment.busines;
-
 
   constructor(private http: HttpClient) {}
 

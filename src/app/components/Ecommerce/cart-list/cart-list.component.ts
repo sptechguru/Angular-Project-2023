@@ -1,12 +1,12 @@
-import { CartService } from './../../../service/cart.service';
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
-  selector: 'app-carts',
-  templateUrl: './carts.component.html',
-  styleUrls: ['./carts.component.css']
+  selector: 'app-cart-list',
+  templateUrl: './cart-list.component.html',
+  styleUrls: ['./cart-list.component.scss']
 })
-export class CartsComponent implements OnInit {
+export class CartListComponent implements OnInit {
 
   procutlist:any = [];
 

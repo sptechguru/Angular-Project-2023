@@ -1,7 +1,9 @@
-<section class="container-fluid py-3">
+<section class="container-fluid">
   <div class="row">
 
-    <div class="col-md-4 col-lg-4 col-12" *ngFor="let pro of procutlist; let i =index;">
+    <div class="col-md-4 col-lg-4 col-12" *ngFor="let pro of procutlist | searcTerm:serachKey:'title'">
+    <!-- <div class="col-md-4 col-lg-4 col-12" *ngFor="let pro of procutlist"> -->
+
       <div class="bgimg card shadow-lg p-3 mb-5 bg-body rounded" >
         <a href="{{pro?.image}}" target="_blank" style="cursor: pointer;">
         <img class="card-img-top img-fluid img-reponsive rounded mx-auto d-block" src="{{pro?.image}}" alt="Card image cap">
@@ -18,11 +20,11 @@
           <p class="card-text font-weight-bold">  <i class="fa-solid fa-indian-rupee-sign text-danger">&nbsp;&nbsp;{{pro?.price}}</i></p>
           <p class="card-text"> {{pro?.description | slice:0:80}}</p>
 
-        <button routerLink="/pages/cart" type="button" class="btn btn-primary btn-md">
-          <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Cart</button>
+        <button (click)="addCart(pro)" type="button" class="btn btn-primary btn-md">
+          <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart</button>
 
-        <button routerLink="/pages/cart" type="button" class="btn btn-success btn-md mx-3 text-white">
-          <i class="fas fa-eye"></i>&nbsp;&nbsp;View</button>
+        <button [routerLink]="['/pages/details/'+pro.id]" type="button" class="btn btn-success btn-md mx-3 text-white">
+          <i class="fas fa-eye"></i>&nbsp;&nbsp;View Prodcut</button>
         </div>
 
       </div>

@@ -1,0 +1,44 @@
+
+<section class="container-fluid py-3">
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-12 bgimg card shadow-lg p-3 mb-5 bg-body rounded">
+      <div class="row">
+        <div class="col-md-6 col-12 col-lg-6 ">
+          <a href="{{procutlist?.image}}" target="_blank" style="cursor: pointer;">
+            <img class="img-fluid img-responsive rounded mx-auto d-block" src="{{procutlist?.image}}"
+              alt="Card image cap">
+          </a>
+        </div>
+        <div class="col-md-6 col-12 col-lg-6 ">
+
+          <div class="card-body">
+            <h4 class="card-title text-priamry">{{procutlist?.title}}</h4>
+            <h4 class="card-text  font-weight-bold"> Rating &nbsp;{{procutlist.rating?.rate}} &nbsp;<i
+                class="fa-solid fa-star text-warning"></i>
+              &nbsp;<i class="fa-solid fa-star text-warning"></i>
+              &nbsp;<i class="fa-solid fa-star text-warning"></i>&nbsp;<i
+                class="fa-solid fa-star-half-stroke text-warning"></i>
+              &nbsp;<i class="fa-solid fa-star-half-stroke text-warning"></i>
+            </h4>
+            <!-- <span class="badge badge-danger">{{procutlist?.category}}</span> -->
+            <p class="card-text text-uppercase "> {{procutlist?.category}}</p>
+            <p class="card-text font-weight-bold"> <i
+                class="fa-solid fa-indian-rupee-sign text-danger">&nbsp;&nbsp;{{procutlist?.price}}</i></p>
+            <p class="card-text"> {{procutlist?.description }}</p>
+
+  
+              <button (click)="addCart(procutlist)" type="button" class="btn btn-primary btn-md">
+                <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart</button>
+      
+            <button [routerLink]="['/pages/details/'+procutlist.id]" type="button"
+              class="btn btn-success btn-md mx-3 text-white">
+              <i class="fas fa-eye"></i>&nbsp;&nbsp;Payment</button> 
+          </div>
+        </div>
+
+      </div>
+      <br />
+      <br />
+    </div>
+  </div>
+</section>

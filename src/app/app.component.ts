@@ -1,6 +1,7 @@
 
 import {Component,OnInit} from '@angular/core';
 import { AuthLoginService } from './service/auth-login.service';
+import { CrudService } from './crud.service';
 
 
 @Component({
@@ -15,8 +16,10 @@ export class AppComponent implements OnInit {
   title = 'test-app';
   isAuth:boolean = false;
   userDetails:any;
+  data:any = "xyz"
+  pageNumber:any = 1;
 
-  constructor(private login:AuthLoginService) { }
+  constructor(private login:AuthLoginService , private api: CrudService) { }
 
 
   ngOnInit(): void {
@@ -30,8 +33,18 @@ export class AppComponent implements OnInit {
     }
     })
 
+    this.getData();
 }
 
+getData(){
+  this.api.getDataList(this.pageNumber).subscribe((res)=>{
+    console.log(res);
+    this.data = res;
+    console.log("parent componets called",this.data);
+  }, error=>{
+    console.log("error Api failed", error);
+  })
+}
 }
 
 

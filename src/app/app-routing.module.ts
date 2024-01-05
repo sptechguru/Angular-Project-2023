@@ -6,14 +6,13 @@ import { LoginsComponent } from './components/logins/logins.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgetComponent } from './components/forget/forget.component';
 import { AuthGuards } from './auth/auth.guard';
+import { Child1Component } from './Basic componets/child1/child1.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/signup', pathMatch: 'full'},
   {path: 'login', component:LoginsComponent },
-  {path: 'signup', component:SignupComponent },
-  // {path: 'forget', component:ForgetComponent },
-  
+  {path: 'signup', component:SignupComponent },  
   // That is admin Module is LazyLoading concepts
   {
     path:'admin',loadChildren:()=>import('./admin/admin.module')
@@ -28,10 +27,8 @@ const routes: Routes = [
   {
     path:'user',loadChildren:()=>import('./user/user.module')
     .then(mod=>mod.UserModule)
-  },
-  
+  },  
   {path: '**',  component: PageNotfoundComponent},
-
 
 ];
 

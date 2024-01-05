@@ -15,7 +15,6 @@ export class LocalStorageJsonServerService {
 
   constructor(private http:HttpClient) { }
 
-
   getMethod(): Observable<Employee>{
     return this.http.get<Employee>(this.apiUrl);
   }
@@ -45,7 +44,6 @@ export class LocalStorageJsonServerService {
 
 
   errorHandling(error:HttpErrorResponse){
-
     if(error.error instanceof ErrorEvent){
       console.error(`An Error Occured ${error.error.message}`)
     }
@@ -55,6 +53,6 @@ export class LocalStorageJsonServerService {
         `body was: ${error.error}`);
     }
     return throwError(
-      'Something bad happened; please try again later.');
-  };
+      'Something bad happened please try again later.');
+  }
 }
